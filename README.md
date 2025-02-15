@@ -5,9 +5,9 @@ Certificate Generation System
 
 ## Prerequisites
 Before running this project, ensure you have installed:
-✅ Node.js (v18 or later) - Download Here
-✅ MongoDB (for local database) - Download Here
-✅ Git (to clone the repository) - Download Here
+✅ Node.js (v18 or later)
+✅ MongoDB (for local database)
+✅ Git (to clone the repository)
 
 ## Installation Guide
 1️⃣ Clone the Repository
