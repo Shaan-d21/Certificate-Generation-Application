@@ -1,74 +1,106 @@
-<<<<<<< HEAD
 # Certificate-Generation-Application
-=======
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Certificate Generation System
+🚀 A complete system for generating and emailing certificates, built with MERN (MongoDB, Express, React, Node.js) and Google OAuth authentication.
 
-## Available Scripts
+## Prerequisites
+Before running this project, ensure you have installed:
+✅ Node.js (v18 or later) - Download Here
+✅ MongoDB (for local database) - Download Here
+✅ Git (to clone the repository) - Download Here
 
-In the project directory, you can run:
+## Installation Guide
+1️⃣ Clone the Repository
+`git clone https://github.com/yourusername/certificate-generator.git`
+`cd certificate-generator`
 
-### `npm start`
+2️⃣ Install Backend Dependencies
+Navigate to the backend folder and install dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`cd backend`
+`npm install`
+🔹 This will install:
+Express (Backend Framework)
+Mongoose (MongoDB ORM)
+Nodemailer (Email Service)
+JWT (Authentication)
+Passport.js (Google OAuth)
+Dotenv (Environment Variables)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3️⃣ Install Frontend Dependencies
+Navigate to the frontend folder and install dependencies:
 
-### `npm test`
+In the main folder
+`npm install`
+🔹 This will install:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React (Frontend Library)
+Axios (For API requests)
+@react-oauth/google (Google OAuth)
+jwt-decode (Decode JWT tokens)
+Tailwind CSS (UI Styling)
 
-### `npm run build`
+## Required Packages & Installation
+Backend (backend/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm install express mongoose cors dotenv nodemailer jsonwebtoken bcryptjs passport passport-google-oauth20 multer csv-parser`
+Package	Purpose
+express	Backend framework
+mongoose	MongoDB ORM
+cors	Handle cross-origin requests
+dotenv	Load environment variables
+nodemailer	Send emails
+jsonwebtoken (JWT)	Authentication
+bcryptjs	Hash passwords
+passport	Authentication middleware
+passport-google-oauth20	Google OAuth
+multer	File uploads (CSV)
+csv-parser	Read CSV files
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Frontend (frontend/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm install react axios @react-oauth/google jwt-decode tailwindcss`
+Package	Purpose
+react	Frontend framework
+axios	API calls
+@react-oauth/google	Google Sign-In
+jwt-decode	Decode JWT tokens
+tailwindcss	UI styling
 
-### `npm run eject`
+## Setup Environment Variables
+Create a .env file inside the backend folder:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/certificateApp
+JWT_SECRET=your_secret_key
+EMAIL=your-email@gmail.com
+EMAIL_PASSWORD=your-app-password
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🔹 Replace values with your actual credentials.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Running the Project
+1️⃣ Start MongoDB
+If using a local database, start MongoDB:
+`mongod`
+For MongoDB Atlas, make sure your MONGO_URI is set correctly in .env.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2️⃣ Start Backend
+Inside the backend folder:
 
-## Learn More
+`npx nodemon server.js`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🔹 The backend will run on `http://localhost:5000.`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3️⃣ Start Frontend
+Inside the frontend folder:
+npm start
+🔹 The frontend will run on `http://localhost:3000.`
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 152b77f (Initial commit)
+## API Endpoints
+Method	Endpoint	Description
+POST	/api/auth/google	Google OAuth Login
+POST	/api/certificates/generate	Generate a certificate
+POST	/api/certificates/bulk-generate	Generate multiple certificates via CSV
+GET	/api/certificates/:id	View a certificate
