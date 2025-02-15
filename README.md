@@ -19,7 +19,8 @@ Navigate to the backend folder and install dependencies:
 
 `cd backend`
 `npm install`
-🔹 This will install:
+
+This will install:
 Express (Backend Framework)
 Mongoose (MongoDB ORM)
 Nodemailer (Email Service)
@@ -32,7 +33,7 @@ Navigate to the frontend folder and install dependencies:
 
 In the main folder
 `npm install`
-🔹 This will install:
+This will install:
 
 React (Frontend Library)
 Axios (For API requests)
@@ -44,46 +45,29 @@ Tailwind CSS (UI Styling)
 Backend (backend/)
 
 `npm install express mongoose cors dotenv nodemailer jsonwebtoken bcryptjs passport passport-google-oauth20 multer csv-parser`
-Package	Purpose
-express	Backend framework
-mongoose	MongoDB ORM
-cors	Handle cross-origin requests
-dotenv	Load environment variables
-nodemailer	Send emails
-jsonwebtoken (JWT)	Authentication
-bcryptjs	Hash passwords
-passport	Authentication middleware
-passport-google-oauth20	Google OAuth
-multer	File uploads (CSV)
-csv-parser	Read CSV files
 
 ## Frontend (frontend/)
 
 `npm install react axios @react-oauth/google jwt-decode tailwindcss`
-Package	Purpose
-react	Frontend framework
-axios	API calls
-@react-oauth/google	Google Sign-In
-jwt-decode	Decode JWT tokens
-tailwindcss	UI styling
 
 ## Setup Environment Variables
 Create a .env file inside the backend folder:
 
-`PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/certificateApp
-JWT_SECRET=your_secret_key
-EMAIL=your-email@gmail.com
-EMAIL_PASSWORD=your-app-password
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret`
+`PORT=5000`
+`MONGO_URI=mongodb://127.0.0.1:27017/certificateApp`
+`JWT_SECRET=your_secret_key`
+`EMAIL=your-email@gmail.com`
+`EMAIL_PASSWORD=your-app-password`
+`GOOGLE_CLIENT_ID=your-google-client-id`
+`GOOGLE_CLIENT_SECRET=your-google-client-secret`
 
-🔹 Replace values with your actual credentials.
+Replace values with your actual credentials.
 
 ## Running the Project
 1️⃣ Start MongoDB
 If using a local database, start MongoDB:
 `mongod`
+
 For MongoDB Atlas, make sure your MONGO_URI is set correctly in .env.
 
 2️⃣ Start Backend
@@ -91,12 +75,13 @@ Inside the backend folder:
 
 `npx nodemon server.js`
 
-🔹 The backend will run on `http://localhost:5000.`
+The backend will run on `http://localhost:5000.`
 
 3️⃣ Start Frontend
 Inside the frontend folder:
-npm start
-🔹 The frontend will run on `http://localhost:3000.`
+`npm start`
+
+The frontend will run on `http://localhost:3000.`
 
 ## API Endpoints
 Method	Endpoint	Description
